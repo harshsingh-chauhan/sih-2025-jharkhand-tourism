@@ -10,7 +10,7 @@ export const Tag = ({
 	children,
 	size = 'md',
 	variant,
-	style = 'default',
+	tagStyle = 'default',
 	dismissible = false,
 	interactive = false,
 	onClick,
@@ -54,7 +54,7 @@ export const Tag = ({
 		'gap-1',
 		sizeClasses[size],
 		variant && variantClasses[variant],
-		styleClasses[style],
+		styleClasses[tagStyle],
 		interactive && 'cursor-pointer hover:scale-105 transition-transform',
 		className
 	].filter(Boolean).join(' ');

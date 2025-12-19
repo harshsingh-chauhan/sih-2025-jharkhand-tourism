@@ -20,7 +20,7 @@ const meta = {
 			options: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
 			description: 'Color variant of the tag',
 		},
-		style: {
+		tagStyle: {
 			control: 'select',
 			options: ['default', 'outline', 'soft', 'ghost'],
 			description: 'Style variant of the tag',
@@ -40,15 +40,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // Basic Tag
-export const Default: Story = {
-	args: {
-		children: 'Tag',
-	},
-};
+export const Default: Story = {};
 
 // Sizes
 export const Sizes: Story = {
-	args: {},
 	render: () => (
 		<div className="flex items-center gap-2">
 			<Tag size="xs">Extra Small</Tag>
@@ -82,13 +77,13 @@ export const SoftStyle: Story = {
 	args: {},
 	render: () => (
 		<div className="flex flex-wrap gap-2">
-			<Tag style="soft" variant="primary">Primary</Tag>
-			<Tag style="soft" variant="secondary">Secondary</Tag>
-			<Tag style="soft" variant="accent">Accent</Tag>
-			<Tag style="soft" variant="info">Info</Tag>
-			<Tag style="soft" variant="success">Success</Tag>
-			<Tag style="soft" variant="warning">Warning</Tag>
-			<Tag style="soft" variant="error">Error</Tag>
+			<Tag tagStyle="soft" variant="primary">Primary</Tag>
+			<Tag tagStyle="soft" variant="secondary">Secondary</Tag>
+			<Tag tagStyle="soft" variant="accent">Accent</Tag>
+			<Tag tagStyle="soft" variant="info">Info</Tag>
+			<Tag tagStyle="soft" variant="success">Success</Tag>
+			<Tag tagStyle="soft" variant="warning">Warning</Tag>
+			<Tag tagStyle="soft" variant="error">Error</Tag>
 		</div>
 	),
 };
@@ -98,13 +93,13 @@ export const OutlineStyle: Story = {
 	args: {},
 	render: () => (
 		<div className="flex flex-wrap gap-2">
-			<Tag style="outline" variant="primary">Primary</Tag>
-			<Tag style="outline" variant="secondary">Secondary</Tag>
-			<Tag style="outline" variant="accent">Accent</Tag>
-			<Tag style="outline" variant="info">Info</Tag>
-			<Tag style="outline" variant="success">Success</Tag>
-			<Tag style="outline" variant="warning">Warning</Tag>
-			<Tag style="outline" variant="error">Error</Tag>
+			<Tag tagStyle="outline" variant="primary">Primary</Tag>
+			<Tag tagStyle="outline" variant="secondary">Secondary</Tag>
+			<Tag tagStyle="outline" variant="accent">Accent</Tag>
+			<Tag tagStyle="outline" variant="info">Info</Tag>
+			<Tag tagStyle="outline" variant="success">Success</Tag>
+			<Tag tagStyle="outline" variant="warning">Warning</Tag>
+			<Tag tagStyle="outline" variant="error">Error</Tag>
 		</div>
 	),
 };
@@ -159,12 +154,12 @@ export const TechnologyTags: Story = {
 	args: {},
 	render: () => (
 		<div className="flex flex-wrap gap-2">
-			<Tag style="soft" variant="primary">React</Tag>
-			<Tag style="soft" variant="info">TypeScript</Tag>
-			<Tag style="soft" variant="secondary">Next.js</Tag>
-			<Tag style="soft" variant="accent">Tailwind CSS</Tag>
-			<Tag style="soft" variant="success">Node.js</Tag>
-			<Tag style="soft" variant="warning">JavaScript</Tag>
+			<Tag tagStyle="soft" variant="primary">React</Tag>
+			<Tag tagStyle="soft" variant="info">TypeScript</Tag>
+			<Tag tagStyle="soft" variant="secondary">Next.js</Tag>
+			<Tag tagStyle="soft" variant="accent">Tailwind CSS</Tag>
+			<Tag tagStyle="soft" variant="success">Node.js</Tag>
+			<Tag tagStyle="soft" variant="warning">JavaScript</Tag>
 		</div>
 	),
 };
@@ -245,19 +240,19 @@ export const TagGroup: Story = {
 			<div>
 				<h3 className="text-sm font-semibold mb-2">Skills</h3>
 				<div className="flex flex-wrap gap-2">
-					<Tag style="soft" variant="primary">React</Tag>
-					<Tag style="soft" variant="primary">Vue</Tag>
-					<Tag style="soft" variant="primary">Angular</Tag>
-					<Tag style="soft" variant="primary">Svelte</Tag>
+					<Tag tagStyle="soft" variant="primary">React</Tag>
+					<Tag tagStyle="soft" variant="primary">Vue</Tag>
+					<Tag tagStyle="soft" variant="primary">Angular</Tag>
+					<Tag tagStyle="soft" variant="primary">Svelte</Tag>
 				</div>
 			</div>
 			<div>
 				<h3 className="text-sm font-semibold mb-2">Interests</h3>
 				<div className="flex flex-wrap gap-2">
-					<Tag style="outline" variant="secondary">Design</Tag>
-					<Tag style="outline" variant="secondary">Development</Tag>
-					<Tag style="outline" variant="secondary">Photography</Tag>
-					<Tag style="outline" variant="secondary">Travel</Tag>
+					<Tag tagStyle="outline" variant="secondary">Design</Tag>
+					<Tag tagStyle="outline" variant="secondary">Development</Tag>
+					<Tag tagStyle="outline" variant="secondary">Photography</Tag>
+					<Tag tagStyle="outline" variant="secondary">Travel</Tag>
 				</div>
 			</div>
 		</div>
@@ -343,7 +338,7 @@ export const FilterTags: Story = {
 							key={filter}
 							interactive
 							variant={selected.includes(filter) ? 'primary' : undefined}
-							style={selected.includes(filter) ? 'default' : 'outline'}
+							tagStyle={selected.includes(filter) ? 'default' : 'outline'}
 							onClick={() => toggleFilter(filter)}
 						>
 							{filter.charAt(0).toUpperCase() + filter.slice(1)}

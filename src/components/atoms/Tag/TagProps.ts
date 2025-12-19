@@ -39,8 +39,8 @@ export interface TagProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'onClick
 	size?: TagSize;
 	/** Color variant */
 	variant?: TagVariant;
-	/** Style variant */
-	style?: TagStyle;
+	/** Style variant (use tagStyle to avoid conflict with HTML style attribute) */
+	tagStyle?: TagStyle;
 	/** Make tag dismissible with an X button */
 	dismissible?: boolean;
 	/** Make tag interactive (clickable with hover effects) */
