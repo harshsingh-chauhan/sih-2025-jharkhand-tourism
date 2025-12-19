@@ -8,6 +8,9 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	args: {
+		name: 'rating-default',
+	},
 	argTypes: {
 		size: {
 			control: 'select',
@@ -81,7 +84,6 @@ export const Star2Warning: Story = {
 
 // Heart with Multiple Colors
 export const HeartMultipleColors: Story = {
-	args: {},
 	render: () => (
 		<div className="rating gap-1">
 			<input type="radio" name="rating-3" className="mask mask-heart bg-red-400" aria-label="1 star" />
@@ -106,7 +108,6 @@ export const Star2Green: Story = {
 
 // Sizes
 export const Sizes: Story = {
-	args: {},
 	render: () => (
 		<div className="flex flex-col gap-2 items-center">
 			<Rating name="rating-5" totalStars={5} size="xs" mask="star-2" color="bg-orange-400" defaultValue={2} />
@@ -146,7 +147,6 @@ export const HalfStars: Story = {
 
 // All Mask Types
 export const AllMaskTypes: Story = {
-	args: {},
 	render: () => (
 		<div className="flex flex-col gap-4 items-center">
 			<div className="text-center">
@@ -179,7 +179,6 @@ export const WithGap: Story = {
 
 // Interactive Example
 export const Interactive: Story = {
-	args: {},
 	render: () => {
 		const handleChange = (value: number) => {
 			console.log('Rating changed to:', value);

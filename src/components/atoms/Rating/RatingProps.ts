@@ -28,7 +28,7 @@ import type { InputHTMLAttributes } from 'react';
 export type RatingSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type RatingMask = 'star' | 'star-2' | 'heart';
 
-export interface RatingProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'value' | 'defaultValue'> {
+export interface RatingProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'value' | 'defaultValue' | 'onChange'> {
 	/** Unique name for the rating group (required to avoid conflicts) */
 	name: string;
 	/** Total number of stars/items to display */
